@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "IiVo2GtnU1+olVvcW6Kp6eFaM8vqQOCjjffzHlVkX+g7i4KQ+5Ew/SBa8UmFQZjqBYcusw/v4Wtejn3d/WIB4w==",
+  "success": true,
+  "projectFilePath": "/Users/yavuzozbay/Documents/ai-portfolio-advisor/Api/Api.csproj",
+  "expectedPackageFiles": [
+    "/Users/yavuzozbay/.nuget/packages/microsoft.aspnetcore.openapi/7.0.20/microsoft.aspnetcore.openapi.7.0.20.nupkg.sha512",
+    "/Users/yavuzozbay/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/yavuzozbay/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/yavuzozbay/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/Users/yavuzozbay/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/yavuzozbay/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/yavuzozbay/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
