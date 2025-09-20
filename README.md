@@ -1,85 +1,80 @@
 
 
+# AI Portfolio Advisor
+
 ## 🚀 Hackathon Challenge
 
-This project was developed as part of a **Hackathon** focused on building innovative, secure, and intelligent solutions for modern investors. The challenge was to create a web application that empowers users to manage their investment portfolios securely, stay up-to-date with financial news, and leverage AI for deeper insights.
+This project was developed as part of a **Hackathon** focused on building secure, intelligent, and user-friendly solutions for modern investors. The main task was to create a full-stack application enabling users to safely manage their investment portfolios, follow up-to-date finance/economy news, and utilize AI-powered news analysis for smarter investment decisions.
 
 **Main challenge:**  
-Designing a user-friendly, full-stack platform that combines real-time financial data, secure user management, and AI-powered analysis—while ensuring a seamless and robust developer experience.
+Building a comprehensive dashboard that combines secure authentication, live financial news, portfolio management, and AI-driven insights, all within a clean and intuitive interface.
 
 ---
 
 ## 🧩 Project Overview
 
-**AI Investment Dashboard** is a platform designed for investors who want to manage their portfolios securely, monitor financial & crypto news, and get AI-driven analyses of important news events.
+**AI Portfolio Advisor** is designed for investors who want to:
 
-- **User Registration & Authentication:** Secure registration and login system (see first screenshot above)
-- **Live Financial News Feed:** Filtered by investment-related topics (see second screenshot)
-- **Portfolio Management:** Users can track their holdings
-- **AI News Analysis:** Users select a news item and receive a smart, AI-generated summary and insight (see third screenshot)
-- **RESTful API:** All interactions are handled via a documented API backend (see fourth screenshot)
+- Securely manage and view their investment portfolios
+- Track the latest financial, crypto, and economic news
+- Receive AI-powered analysis and summaries of selected news items
 
 ---
 
 ## 🎯 Purpose
 
-The application enables investors to:
-- **Follow financial, crypto, and economic news** relevant to their interests
-- **Analyze news headlines and articles with AI** to understand their impact on the market
-- **Manage their portfolio** in a secure and intuitive environment
+To help investors make safer, more informed decisions by providing:
 
----
-
-## 🛠️ Technologies Used
-
-- **Frontend:** React.js (functional components, hooks, modular structure)
-- **Backend:** .NET Core Web API (RESTful endpoints)
-- **Authentication:** JWT-based secure login/register
-- **AI Integration:** News analysis service (e.g., OpenAI or custom ML)
-- **News Data:** Integration with financial news APIs (crypto, stocks, economy)
-- **Styling:** Responsive design with CSS-in-JS and modern UI practices
-- **Swagger:** For API documentation and testing
-
----
-
-## ✨ Key Features
-
-- **Modern, clean UI:** Simple navigation, responsive layout
-- **News search & filtering:** By keywords (e.g., "bitcoin", "investment", "economy")
-- **Visible News IDs:** Each news item displays a unique ID for easy AI analysis selection
-- **AI-powered analysis:** Select a news ID and get instant insights
-- **Secure portfolio management:** All sensitive actions require authentication
-
----
-
-## 🏆 What Makes It Special?
-
-- **Investor-centric:** Focused on actionable, investment-relevant news and tools
-- **Security-first:** JWT auth, protected endpoints, robust error handling
-- **AI as a service:** Real-time, contextual news analysis for smarter investment decisions
-- **Hackathon ready:** Developed under time pressure, with clean code and extensibility in mind
+- **Security:** Reliable user authentication and authorization
+- **Relevance:** Focused, finance/investment-oriented news feed
+- **Insight:** AI-based analysis for selected news, helping users quickly grasp market impacts
 
 ---
 
 ## 📸 Screenshots
 
-- **Register Screen:**  
-  <img src="src/assets/image1.png" width="600" alt="Register Screen" />
-- **Dashboard & News:**  
-  <img src="src/assets/image2.png" width="600" alt="Dashboard & News" />
-- **AI Analysis:**  
-  <img src="src/assets/image3.png" width="600" alt="AI Analysis" />
-- **Swagger API:**  
-  <img src="src/assets/image4.png" width="600" alt="Swagger API" />
+### Register Screen
+![Register Screen](ai-portfolio-frontend/src/assets/image1.png)
+
+### News Dashboard
+![News Dashboard](ai-portfolio-frontend/src/assets/image2.png)
+
+### AI Analysis Example
+![AI Analysis Example](ai-portfolio-frontend/src/assets/image3.png)
+
+### API Endpoints (Swagger)
+![API Endpoints](ai-portfolio-frontend/src/assets/image4.png)
 
 ---
 
-## 🔒 Security and Design Challenges
+## 🛠️ Technologies Used
 
-- Implementing secure, stateless authentication and user sessions
-- Ensuring only authenticated users can access portfolios and analysis
-- Handling real-time news updates and mapping selected news to unique IDs
-- Integrating AI analysis smoothly with news selection
+- **Frontend:** React.js (functional components, hooks)
+- **Backend:** .NET Core Web API (RESTful endpoints)
+- **Authentication:** JWT-based secure login/register
+- **AI Integration:** News analysis via an AI/ML service (e.g., OpenAI API)
+- **News Data:** Integration with financial news APIs (crypto, stocks, economy)
+- **Styling:** Responsive CSS
+- **API Docs:** Swagger UI for backend API documentation
+
+---
+
+## ✨ Key Features
+
+- **User Registration & Login:** Secure JWT authentication
+- **Live Financial News Feed:** Searchable and focused on investment and economy news
+- **Portfolio Management:** Manage and track your holdings (UI ready for extension)
+- **AI-powered News Analysis:** Select a news item to get instant AI-generated insights
+- **RESTful API:** Well-structured endpoints for all functionalities
+
+---
+
+## 🔒 Security and Design
+
+- Secure, stateless authentication and user session management
+- All critical operations require authentication
+- Clean separation of concerns between frontend, backend, and data layers
+- Robust error handling and validation
 
 ---
 
@@ -87,14 +82,14 @@ The application enables investors to:
 
 1. **Clone the repository**
 2. **Install frontend and backend dependencies**
-3. **Configure API keys for news and AI services**
-4. **Run backend and frontend**
+3. **Configure API keys for news and AI services (if required)**
+4. **Run backend and frontend servers**
 5. **Open in browser and register to start using the dashboard**
 
 ---
 
 ## 🙌 Credits
 
-Developed by [yavuzoz](https://github.com/yavuzoz) as part of a hackathon challenge.
+Developed by [yavuzoz](https://github.com/yavuzoz) as part of a Hackathon challenge.
 
 ---
