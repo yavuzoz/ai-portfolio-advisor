@@ -39,7 +39,7 @@ namespace Api.Controllers
                 sb.AppendLine();
             }
 
-            var prompt = $"Aşağıdaki haberleri analiz et ve önemli çıkarımları özetle:\n\n{sb}";
+            var prompt = $"Analyze the following news articles and summarize the most important findings in English:\n\n{sb}";
 
             var aiResult = await _gemini.AnalyzeAsync(prompt);
 

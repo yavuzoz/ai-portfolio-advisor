@@ -4,11 +4,11 @@ using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 using Api.Data;
-using Api.Models;
 using Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Database
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -16,8 +16,20 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     )
 );
 
+// CORS - Makalede belirtildiği gibi önce bu gelmeli
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddControllers();
 
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -25,7 +37,7 @@ builder.Services.AddSwaggerGen(c =>
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
-        Description = "Please insert JWT with Bearer into field",
+        Description = "Insert JWT with Bearer",
         Name = "Authorization",
         Type = SecuritySchemeType.ApiKey
     });
@@ -44,8 +56,9 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// JWT Authentication
 var jwtSettings = builder.Configuration.GetSection("Jwt");
-var key = Encoding.ASCII.GetBytes(jwtSettings["Key"] ?? throw new InvalidOperationException("JWT key is missing"));
+var key = Encoding.ASCII.GetBytes(jwtSettings["Key"] ?? throw new InvalidOperationException("JWT key missing"));
 
 builder.Services.AddAuthentication(options =>
 {
@@ -66,20 +79,27 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
+// Custom service
 var geminiApiKey = builder.Configuration["Gemini:ApiKey"];
 if (string.IsNullOrEmpty(geminiApiKey))
 {
-    throw new InvalidOperationException("Gemini:ApiKey is missing in configuration.");
+    throw new InvalidOperationException("Gemini:ApiKey missing in configuration");
 }
 builder.Services.AddSingleton(new GeminiAnalyzer(geminiApiKey));
 
 var app = builder.Build();
 
+// Swagger
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseRouting();
+
+// CORS middleware - Authentication'dan ÖNCE olmalı
+app.UseCors("AllowReactApp");
 
 app.UseAuthentication();
 app.UseAuthorization();

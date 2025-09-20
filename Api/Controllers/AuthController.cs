@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -10,7 +11,6 @@ namespace Api.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        // In-memory user store for demo purposes
         private static List<User> Users = new List<User>
         {
             new User { Username = "demo", Password = "password" }
@@ -24,6 +24,7 @@ namespace Api.Controllers
         }
 
         [HttpPost("register")]
+        [AllowAnonymous]
         public IActionResult Register([FromBody] RegisterRequest request)
         {
             if (Users.Any(u => u.Username == request.Username))
@@ -34,6 +35,7 @@ namespace Api.Controllers
         }
 
         [HttpPost("login")]
+        [AllowAnonymous]
         public IActionResult Login([FromBody] LoginRequest request)
         {
             var user = Users.FirstOrDefault(u => u.Username == request.Username && u.Password == request.Password);
@@ -60,7 +62,7 @@ namespace Api.Controllers
                 issuer: jwtSettings["Issuer"],
                 audience: jwtSettings["Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(double.Parse(jwtSettings["ExpiresInMinutes"])),
+                expires: DateTime.UtcNow.AddMinutes(30),
                 signingCredentials: creds
             );
 

@@ -39,6 +39,18 @@ namespace Api.Controllers
             [FromQuery] int pageSize = 10,
             [FromQuery] int page = 1)
         {
+            Console.WriteLine($"Gelen q: {q}, sources: {sources}, domains: {domains}");
+            // En az bir parametre dolu olmalı (q, sources, domains)
+            if (string.IsNullOrWhiteSpace(q) && string.IsNullOrWhiteSpace(sources) && string.IsNullOrWhiteSpace(domains))
+            {
+                return BadRequest(new
+                {
+                    status = "error",
+                    code = "parametersMissing",
+                    message = "Required parameters are missing. Please set at least one of: q, sources, or domains."
+                });
+            }
+
             var url = $"https://newsapi.org/v2/everything?q={Uri.EscapeDataString(q)}&language={language}&sortBy={sortBy.ToLower()}&pageSize={pageSize}&page={page}";
 
             if (!string.IsNullOrWhiteSpace(sources))

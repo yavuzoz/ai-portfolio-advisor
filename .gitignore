@@ -1,0 +1,52 @@
+## Build results
+bin/
+obj/
+out/
+appsettings.Development.json
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio Code
+.vscode/
+.history/
+
+## Rider
+.idea/
+
+## OS generated files
+.DS_Store
+Thumbs.db
+
+## Package managers
+node_modules/
+packages/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+## Logs
+*.log
+
+## Others
+*.vspscc
+*.vssscc
+_ReSharper*/
+*.[Cc]ache
+*.dbmdl
+*.bak
+*.backup
+*.tmp
+*.temp
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# DotCover
+*.dotCover
+
+# Publish output
+publish/
